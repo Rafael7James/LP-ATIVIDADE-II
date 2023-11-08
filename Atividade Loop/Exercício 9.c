@@ -1,35 +1,30 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <locale.h>
-int main()
-{
-
-    setlocale(LC_ALL, "portuguese");
 
 
-    int num, i, flag = 0;
-  
-    printf("Digite um numero inteiro: ");
-    scanf("%d", &num);
-  
-    switch (num) {
-        case 0:
-        case 1:
-            flag = 1;   
-            printf("Nao é primo");
-            break;
-        case 2:
-            flag = 0;   
-            printf("é primo");
-            break;
-        default:
-            for (i = 2; i <= num / 2; ++i) {
-                if (num % i == 0) {
-                    flag = 1;  
-                    printf("Nao é primo"); 
-                    break;
-                }
-            }
+
+int main(){
+
+  int numero, i, resultado = 0;
+
+  printf("Digite o numero:");
+  scanf("%d", &numero);
+
+  for (i = 2; i <= numero / 2; i++)
+  {
+    if (numero % i == 0) {
+      resultado++;
+      break;
     }
-return 0; 
+  }
+  
+  if(resultado == 0) {
+    printf("%d e um numero primo \n", numero);
+  }else {
+    printf("%d nao e um numero primo\n", numero);
+  }
+  
+
+
+return 0;
 }
